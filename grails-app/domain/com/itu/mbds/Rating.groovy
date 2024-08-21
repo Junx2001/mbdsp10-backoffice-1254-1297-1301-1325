@@ -10,30 +10,26 @@ class Rating implements MongoEntity<Rating> {
     static mapWith = "mongodb"
     ObjectId id
     int userId
-    int concerned_id
+    int concerned_user_id
     String review
-    Double stars
+    Double rating
 
     static constraints = {
         id nullable: false
         userId nullable: false
-        concerned_id nullable: false
+        concerned_user_id nullable: false
         review nullable: true
-        stars nullable: false
+        rating nullable: false
     }
     static mapping = {
-        table '`Ratings`'
         id attr: '_id'
+        collection 'ratings'
         version false
-        userId column: '`userId`'
-        concerned_id column: '`concerned_user_id`'
-        review column: '`review`'
-        stars column: '`rating`'
     }
     User getUser(){
         return User.get(this.userId)
     }
     User getConcernedUser(){
-        return User.get(this.concerned_id)
+        return User.get(this.concerned_user_id)
     }
 }

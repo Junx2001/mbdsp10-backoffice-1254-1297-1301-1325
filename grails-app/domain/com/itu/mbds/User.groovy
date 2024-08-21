@@ -71,9 +71,9 @@ class User implements Serializable {
     Double getAverageRating()
     {
         def avgStars = 0 as Double
-        def rates = Rating.findAllByConcerned_id(this.id as int) as List<Rating>
+        def rates = Rating.findAllByConcerned_user_id(this.id as int) as List<Rating>
         if(rates.size()>0){
-            def totalStars = rates.sum { Rating rating -> rating.stars ?: 0 } as Double
+            def totalStars = rates.sum { Rating rating -> rating.rating ?: 0 } as Double
             def ratingCount = rates.size()?: 1 as Double
             avgStars = ratingCount > 0 ? (totalStars / ratingCount) as Double : 0.0 as Double
         }

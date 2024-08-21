@@ -142,17 +142,21 @@
                                     <thead>
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">User</th>
+                                        <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Review</th>
                                         <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Stars</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <g:each in="${ratingList}" var="rating">
+                                    <g:each in="${ratingList}" var="rate">
                                         <tr>
                                             <td>
-                                                <span class="text-xs ">${rating.user.username}</span>
+                                                <span class="text-xs ">${rate.user.username}</span>
                                             </td>
                                             <td>
-                                                <span class="text-xs text-secondary ">${rating.stars}/5</span>
+                                                <span class="text-xs ">${rate.review}</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-xs text-secondary ">${rate.rating}/5</span>
                                             </td>
                                         </tr>
                                     </g:each>

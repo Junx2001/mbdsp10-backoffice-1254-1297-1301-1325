@@ -3,7 +3,7 @@ package com.itu.mbds
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
-class TransactionControllerSpec extends Specification implements ControllerUnitTest<TransactionController> {
+class CategoryControllerSpec extends Specification implements ControllerUnitTest<CategoryController> {
 
     def setup() {
     }

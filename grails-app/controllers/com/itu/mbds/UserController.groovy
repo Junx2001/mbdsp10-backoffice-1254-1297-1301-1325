@@ -78,7 +78,7 @@ class UserController {
 
         def exchangeList = user.getAllExchanges();
         def transactionList = Transaction.findAllByOwner_idOrTaker_id(user.id as int, user.id as int,[sort: "creation_date", order: "desc"])
-        def ratingList = Rating.findAllByConcerned_id(user.id as int)
+        def ratingList = Rating.findAllByConcerned_user_id(user.id as int)
 
         respond user, model:[exchangeList: exchangeList, transactionList: transactionList, ratingList :ratingList]
     }

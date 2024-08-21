@@ -30,8 +30,8 @@ class Transaction implements MongoEntity<Transaction> {
         longitude nullable: true
     }
     static mapping = {
-        table '`Transactions`'
         id attr: '_id'
+        collection 'transactions'
         version false
     }
     Exchange getExchange(){

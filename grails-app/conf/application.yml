@@ -97,9 +97,7 @@ grails:
                 taglib: none
                 staticparts: none
     mongodb:
-        databaseName: "troc_tpt"
         url: "mongodb+srv://doadmin:c21jLs7CtpK68905@db-mongodb-nyc1-88914-e38b3683.mongo.ondigitalocean.com/troc_tpt?replicaSet=db-mongodb-nyc1-88914&tls=true&authSource=admin"
-
 ---
 hibernate:
     cache:
