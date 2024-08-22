@@ -1,1 +1,1 @@
-web: java -Dserver.port=80 -jar build/libs/grails_backend_troc-0.1-plain.war
+web: java -Dserver.port=80 -jar build/libs/troc-tpt-mbds.war

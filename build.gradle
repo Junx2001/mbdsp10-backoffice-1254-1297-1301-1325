@@ -127,3 +127,12 @@ war.mustRunAfter clean
 
 // stage.dependsOn(copyToLib)
 
+bootWar {
+    archiveFileName = 'troc-tpt-mbds.war'
+}
+
+tasks.withType(org.springframework.boot.gradle.tasks.bundling.BootWar) {
+    manifest {
+        attributes 'Main-Class': 'org.springframework.boot.loader.WarLauncher'
+    }
+}
