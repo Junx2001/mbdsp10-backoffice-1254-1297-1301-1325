@@ -109,23 +109,23 @@ dataSource:
     pooled: true
     jmxExport: true
     driverClassName: org.postgresql.Driver
-    username:
-    password:
+    username: doadmin 
+    password: AVNS_S5tr9AOI2sc7J5AWBFn
     dialect: org.hibernate.dialect.PostgreSQLDialect
     
 environments:
     development:
         dataSource:
             dbCreate: update
-            url:
+            url: jdbc:postgresql://db-postgresql-nyc1-18909-do-user-16081489-0.db.ondigitalocean.com:25060/troc_tpt
     test:
         dataSource:
             dbCreate: none
-            url:
+            url: jdbc:postgresql://db-postgresql-nyc1-18909-do-user-16081489-0.db.ondigitalocean.com:25060/troc_tpt
     production:
         dataSource:
             dbCreate: none
-            url:
+            url: jdbc:postgresql://db-postgresql-nyc1-18909-do-user-16081489-0.db.ondigitalocean.com:25060/troc_tpt
             properties:
                 jmxEnabled: true
                 initialSize: 5
