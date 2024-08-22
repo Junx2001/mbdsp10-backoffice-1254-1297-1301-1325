@@ -1,1 +1,1 @@
-web: java -Dserver.port=8080 $JAVA_OPTS -jar build/libs/*.war
+web: java -Dserver.port=8080 -Xmx512m -Xms256m -Dsome.property=value -jar build/libs/*.war
