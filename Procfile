@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar build/libs/grails_backend_troc-0.1.jar
+web: java -Dserver.port=$PORT -jar build/libs/grails_backend_troc-0.1-plain.war
