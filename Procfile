@@ -1,1 +1,1 @@
-web: ./gradlew bootRun
+web: java -Dserver.port=$PORT -jar build/libs/grails_backend_troc-0.1.jar
