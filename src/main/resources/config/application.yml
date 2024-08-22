@@ -4,7 +4,7 @@ server:
   port: 8080
 illustrations:
   path:
-  url:
+  url: https://troc-mbds-tpt-de27e6ed0630.herokuapp.com/assets/
 dataSource:
   username: doadmin
   password: AVNS_S5tr9AOI2sc7J5AWBFn
@@ -12,9 +12,15 @@ environments:
   development:
     dataSource:
       url: jdbc:postgresql://db-postgresql-nyc1-18909-do-user-16081489-0.db.ondigitalocean.com:25060/troc_tpt
+      username: doadmin
+      password: AVNS_S5tr9AOI2sc7J5AWBFn
   test:
     dataSource:
       url: jdbc:postgresql://db-postgresql-nyc1-18909-do-user-16081489-0.db.ondigitalocean.com:25060/troc_tpt
+      username: doadmin
+      password: AVNS_S5tr9AOI2sc7J5AWBFn
   production:
     dataSource:
       url: jdbc:postgresql://db-postgresql-nyc1-18909-do-user-16081489-0.db.ondigitalocean.com:25060/troc_tpt
+      username: doadmin
+      password: AVNS_S5tr9AOI2sc7J5AWBFn
