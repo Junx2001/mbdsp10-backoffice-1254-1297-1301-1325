@@ -1,10 +1,10 @@
 # Ceci devra contenir votre configuration personnelle
 # Ce fichier ne devrait pas être ajouté à git car chacun devra conserver sa propre configuration concernant les chemins pour stocker les fichiers
 server:
-  port: 8080
+  port: 8082
 illustrations:
   path:
-  url: https://troc-mbds-tpt-de27e6ed0630.herokuapp.com/assets/
+  url:
 dataSource:
   username: doadmin
   password: AVNS_S5tr9AOI2sc7J5AWBFn
