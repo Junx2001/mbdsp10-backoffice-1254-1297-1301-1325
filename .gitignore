@@ -11,4 +11,4 @@ out/
 .settings
 .classpath
 bin/
-src/main/resources/config/application.yml
+#src/main/resources/config/application.yml
