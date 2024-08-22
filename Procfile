@@ -1,1 +1,1 @@
-web: java -Dserver.port=80 -Xmx512m -Xms256m -Dsome.property=value -jar build/libs/*.war
+web: java -Dserver.port=${PORT} -Xmx512m -Xms256m -Dsome.property=value -jar build/libs/*.war
