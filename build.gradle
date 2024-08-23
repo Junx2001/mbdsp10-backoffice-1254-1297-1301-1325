@@ -108,7 +108,7 @@ assets {
 
 
 task stage() {
-    dependsOn clean, war
+    dependsOn clean, war, bootWar
 }
 tasks.stage.doLast() {
     delete fileTree(dir: "build/distributions")
@@ -120,7 +120,8 @@ war.mustRunAfter clean
 
 // task copyToLib(type: Copy) {
 //     into "$buildDir/server"
-//     from(configurations.compile) {
+//     from(configurations.compile) { 
+
 //         include "webapp-runner*"
 //     }
 // }
