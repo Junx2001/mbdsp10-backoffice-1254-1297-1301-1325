@@ -1,1 +1,1 @@
-web: java -Dserver.port=80 -jar build/libs/troc-tpt-mbds.war
+web: java -Dserver.port=$PORT -jar build/libs/troc-tpt-mbds.war

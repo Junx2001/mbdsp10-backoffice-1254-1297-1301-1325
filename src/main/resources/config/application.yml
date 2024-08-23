@@ -1,7 +1,7 @@
 # Ceci devra contenir votre configuration personnelle
 # Ce fichier ne devrait pas être ajouté à git car chacun devra conserver sa propre configuration concernant les chemins pour stocker les fichiers
 server:
-  port: 80
+  port: {$PORT:80}
 illustrations:
   path:
   url:
