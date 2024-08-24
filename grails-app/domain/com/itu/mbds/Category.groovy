@@ -8,12 +8,15 @@ class Category {
 
     static constraints = {
         categoryName nullable: false, blank: false, unique: true
+        createdAt nullable: true
+        updatedAt nullable: true
     }
+
     static mapping = {
         table '`Categories`'
         categoryName column: '`category_name`'
-        createdAt column: '`createdAt`'
-        updatedAt column: '`updatedAt`'
+        createdAt column: '`createdAt`',date: true, default: new Date()
+        updatedAt column: '`updatedAt`',date: true, default: new Date()
         version false
     }
     Set<Product> getProducts(){

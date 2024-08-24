@@ -36,6 +36,7 @@
                             <tr>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
                                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Name</th>
+                                <th class="text-secondary opacity-7"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,7 +52,22 @@
                                             </div>
                                         </div>
                                     </td>
-
+                                    <td class="align-middle">
+                                        <div class="d-flex gap-3">
+                                            <div>
+                                                <g:link action="edit" id="${category.id}" class="btn btn-link text-primary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Show user">
+                                                    Edit
+                                                </g:link>
+                                            </div>
+                                            <g:form controller="category" action ="delete" method="DELETE" id="${category.id}">
+                                                <div>
+                                                    <button class="btn btn-link text-danger font-weight-bold text-xs" type="submit" onclick="return confirm('Are you sure?');">
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </g:form>
+                                        </div>
+                                    </td>
                                 </tr>
                             </g:each>
                             </tbody>

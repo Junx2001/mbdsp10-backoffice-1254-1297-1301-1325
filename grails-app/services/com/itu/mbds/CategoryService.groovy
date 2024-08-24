@@ -13,6 +13,6 @@ interface CategoryService {
 
     void delete(Serializable id)
 
-    Category save(Category post)
+    Category save(Category category)
 
 }

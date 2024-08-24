@@ -2,6 +2,8 @@ package com.itu.mbds
 
 import grails.plugin.springsecurity.annotation.Secured
 
+import javax.validation.ValidationException
+
 import static org.springframework.http.HttpStatus.NOT_FOUND
 
 @Secured(['ROLE_ADMIN','ROLE_SUPER_ADMIN'])
@@ -18,13 +20,70 @@ class CategoryController {
         respond categoryList, model:[categoryCount: categoryCount]
 
     }
-    def show(Long id) {
-        def category = categoryService.get(id)
+    def create() {
+        respond new Category(params)
+    }
+
+    def save(Category category) {
         if (category == null) {
             notFound()
             return
         }
-        respond category
+        try {
+            category.createdAt = new Date()
+            category.updatedAt = new Date()
+            categoryService.save(category)
+        } catch (ValidationException e) {
+            respond category.errors, view: 'create'
+            return
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'category.label', default: 'Category'), category.id])
+                redirect action: "index", method: "GET"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
+    }
+    def edit(Long id) {
+        respond categoryService.get(id)
+    }
+    def update(Category category) {
+        if (category == null) {
+            notFound()
+            return
+        }
+        try {
+            category.updatedAt = new Date()
+            categoryService.save(category)
+        } catch (ValidationException e) {
+            println(e);
+            respond category.errors, view:'edit'
+            return
+        }
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'category.label', default: 'Category'), category.id])
+                redirect action: "index", method: "GET"
+            }
+            '*' { render status: NO_CONTENT }
+        }
+    }
+    def delete(Long id) {
+        if (id == null) {
+            notFound()
+            return
+        }
+        categoryService.delete(id)
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'category.label', default: 'Category'), id])
+                redirect action:"index", method:"GET"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
     }
     protected void notFound() {
         request.withFormat {
