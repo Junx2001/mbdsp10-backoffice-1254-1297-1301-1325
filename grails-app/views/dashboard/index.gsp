@@ -63,7 +63,6 @@
                 </div>
                 <div class="card-body">
                     <h6 class="mb-0 "> Daily Transactions </h6>
-                    <p class="text-sm "> Successful transaction </p>
                     <hr class="dark horizontal">
                 </div>
             </div>

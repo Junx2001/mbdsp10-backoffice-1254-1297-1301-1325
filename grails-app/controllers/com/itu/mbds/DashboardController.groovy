@@ -24,7 +24,6 @@ class DashboardController {
 
 
         def criteria = Exchange.createCriteria()
-        // Query using GORM criteria
         def todayExchanges =  criteria.list {
             between('creationDate', globalService.getStartOfDay(), globalService.getEndOfDay())
             //ne('status', 'CREATED')  // 'ne' for not equal
