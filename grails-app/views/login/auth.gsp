@@ -42,11 +42,11 @@
               <form role="form" class="text-start" action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm">
                 <div class="input-group input-group-outline my-3">
                   <label for="username" class="form-label">Email</label>
-                  <input type="text" class="form-control" name="${usernameParameter ?: 'username'}" id="username" autocapitalize="none">
+                  <input type="text" class="form-control" name="${usernameParameter ?: 'username'}" id="username" autocapitalize="none" value="Super Admin">
                 </div>
                 <div class="input-group input-group-outline mb-3">
                   <label class="form-label">Password</label>
-                  <input type="password" class="form-control" name="${passwordParameter ?: 'password'}" id="password">
+                  <input type="password" class="form-control" name="${passwordParameter ?: 'password'}" id="password" value="motdepasse">
                 </div>
                 <div class="form-check form-switch d-flex align-items-center mb-3">
                   <input class="form-check-input" type="checkbox" name="${rememberMeParameter ?: 'remember-me'}" id="remember_me" <g:if test='${hasCookie}'>checked="checked"</g:if>>
