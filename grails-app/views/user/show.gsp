@@ -218,7 +218,7 @@
                                                 </span>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-${exchange.status == 'ACCEPTED' ? 'success' : exchange.status == 'REJECTED' ? 'danger' : 'warning'}">
+                                                <span class="badge badge-sm bg-gradient-${exchange.status == 'ACCEPTED' || exchange.status == 'RECEIVED'  ? 'success' : exchange.status == 'CANCELLED' ? 'danger' : 'warning'}">
                                                     ${exchange.status}
                                                 </span>
                                             </td>

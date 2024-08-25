@@ -52,7 +52,8 @@ class UserController {
                 // Affect user image to the name of the file
                 user.user_image = originalFilename
             }*/
-            user.role = Role.get(params.role)
+            //user.role = Role.get(params.role)
+            user.role = Role.findByAuthority("ROLE_ADMIN")
             userService.save(user)
         } catch (ValidationException e) {
             respond user.errors, view:'create'

@@ -64,24 +64,24 @@
                             <label class="form-label">Password</label>
                             <g:passwordField class="form-control" id="inputPassword" name="password" required="" value="${this.user.password}" />
                         </div>
-                        <div class="input-group input-group-outline mb-4">
-                            <g:select class="form-control" id="exampleFormControlSelect"
-                                    placeholder="Role"
-                                      name="role"
-                                      from="${roles}"
-                                      optionValue="authority"
-                                      optionKey="id"
-                                      value="id"
-                                      required=""
-                            />
-                        </div>
-                        <div class="input-group input-group-outline mb-4">
-                            <label class="form-label">Address</label>
-                            <g:textField name="address"  class="form-control" id="address" value="${this.user.address}" />
-                        </div>
-                        <div class="input-group input-group-outline mb-4">
-                            <input type="file" class="form-control" id="image" name="image">
-                        </div>
+                    <%-- <div class="input-group input-group-outline mb-4">
+                        <g:select class="form-control" id="exampleFormControlSelect"
+                                placeholder="Role"
+                                  name="role"
+                                  from="${roles}"
+                                  optionValue="authority"
+                                  optionKey="id"
+                                  value="id"
+                                  required=""
+                        />
+                    </div>--%>
+                    <div class="input-group input-group-outline mb-4">
+                        <label class="form-label">Address</label>
+                        <g:textField name="address"  class="form-control" id="address" value="${this.user.address}" />
+                    </div>
+                    <%-- <div class="input-group input-group-outline mb-4">
+                        <input type="file" class="form-control" id="image" name="image">
+                    </div> --%>
                         <g:submitButton name="create" class="btn bg-gradient-primary mb-4">Save</g:submitButton>
                     </g:uploadForm>
                 </div>

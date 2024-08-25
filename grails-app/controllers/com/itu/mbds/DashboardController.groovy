@@ -15,7 +15,7 @@ class DashboardController {
     GlobalService globalService
 
     def index() {
-        params.max = Math.min(10, 100)
+        params.max = Math.min(10, 10)
         params.sort = "creationDate"
         params.order = "desc"
         def exchangeList = exchangeService.list(params)
@@ -34,7 +34,7 @@ class DashboardController {
                 Arrays.asList(
                         // Project creation_date as a formatted date string
                         Aggregates.project(Projections.fields(
-                                Projections.computed("date", new Document("\$dateToString", new Document("format", "%Y-%m-%d").append("date", "\$creation_date"))),
+                                Projections.computed("date", new Document("\$dateToString", new Document("format", "%Y-%m-%d").append("date", "\$created_at"))),
                                 Projections.excludeId()
                         )),
                         // Group by the formatted date and count the number of occurrences
