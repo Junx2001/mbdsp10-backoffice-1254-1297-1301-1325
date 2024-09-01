@@ -33,12 +33,19 @@
             Current owner : ${this.product.actualOwner.username}
           </p>
           <p class="mb-0 font-weight-normal text-sm">
-            <g:if test="${this.product.isExchangeable}">
-              <span class="badge badge-sm bg-gradient-success">is exchangeable</span>
+            <g:if test="${this.product.deletedAt}">
+              <span class="badge badge-sm bg-gradient-danger">DELETED</span>
+              <p class="text-xxs text-secondary" >${this.product.deletedAt}</p>
             </g:if>
             <g:else>
-              <span class="badge badge-sm bg-gradient-danger">not exchangeable</span>
+              <g:if test="${this.product.isExchangeable}">
+                <span class="badge badge-sm bg-gradient-success">is exchangeable</span>
+              </g:if>
+              <g:else>
+                <span class="badge badge-sm bg-gradient-danger">not exchangeable</span>
+              </g:else>
             </g:else>
+
           </p>
         </div>
       </div>

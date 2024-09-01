@@ -77,7 +77,13 @@
                                         <span class="text-xs font-weight-bold mb-0">${product.firstOwner.username}</span>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm ${product.isExchangeable ? "bg-gradient-success" : "bg-gradient-danger"}">${product.isExchangeable ? "TRUE" : "FALSE"}</span>
+                                        <g:if test="${!product.deletedAt}">
+                                            <span class="badge badge-sm ${product.isExchangeable ? "bg-gradient-success" : "bg-gradient-danger"}">${product.isExchangeable ? "TRUE" : "FALSE"}</span>
+                                        </g:if>
+                                        <g:else>
+                                            <span class="badge badge-sm bg-gradient-danger">DELETED</span>
+                                            <p class="text-xxs text-secondary" >${product.deletedAt}</p>
+                                        </g:else>
                                     </td>
                                     <td class="align-middle">
                                         <g:link action="show" id="${product.id}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
